@@ -15,15 +15,45 @@
     </header>
 
     <main>
-        <div class="container-icon icon-home">
+
+        <main class="wrap">
+
+        <h1 class="title"> 🍸 Ingresa el ingrediente para buscar 🍸 </h1>
+
+         <!--Formulario de busqueda-->
+
+         <forms id="form-buscar" class="search">
+            <input
+            id="innput-coctel"
+            type="text"
+            placeholder="Ingresa el ingrediente para encontrar coctéles"
+            autocomplete="off"
+            required
+            />
+
+            <button type="submit">Buscar</button>
+
+         </forms>
+
+         <!--Loader-->
+
+         <p id="estado" class="loader"></p>
+
+         <!--Resultados de búsqueda-->
+
+         <div id="resultados" class="grid"> </div>
+
+
+
+        </main>
+
+    <div class="container-icon icon-home">
         
         <a href="index.html">
             <ion-icon name="home-outline" class="home-icon"></ion-icon>
         </a>
 
         </div>
-
-    </main>
   <script src="../js/script.js"></script>
 </body>
 </html>
