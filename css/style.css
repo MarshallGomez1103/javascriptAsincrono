@@ -1,0 +1,74 @@
+@font-face {
+    font-family: MoochiJelly;
+    src: url(../fonts/MoochiJelly.otf);
+}
+
+
+body{
+    background: linear-gradient(to right,orange,rgb(255, 70, 162));
+}
+.banner{
+  width: 100%;
+  display:block;
+  margin:0;
+  padding:0;
+
+}
+.title{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    text-decoration:underline;
+    color:rgb(255, 255, 255);
+    font-family: MoochiJelly;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.625rem;
+}
+
+.button_inicio{
+
+    background: rgb(209, 49, 75);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color:white;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-decoration: none;
+    width: 50%;
+    border:none;
+}
+
+.icon-favoritos{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.heart-icon{
+    width: 40px;
+    height: 40px;
+    color: rgb(209, 49, 75);
+}
+
+.container-icon {
+    display: flex;
+    gap: 2rem;
+    transition: all .5s;
+    cursor: pointer;
+}
