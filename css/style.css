@@ -1,70 +1,76 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 @font-face {
     font-family: "MoochiJelly";
     src: url(../fonts/MoochiJelly.otf);
 }
 
-@font-face{
-    font-family:"STB";
-    src:url(../fonts/KGSTB.ttf);
+@font-face {
+    font-family: "STB";
+    src: url(../fonts/KGSTB.ttf);
 }
 
-@font-face{
-    font-family:"love";
-    src:url(../fonts/Love.ttf);
+@font-face {
+    font-family: "love";
+    src: url(../fonts/Love.ttf);
 }
 
 
-body{
-    background: linear-gradient(to right,orange,rgb(255, 70, 162));
+body {
+    background: linear-gradient(to right, orange, rgb(255, 70, 162));
 }
-.banner{
-  width: 100%;
-  display:block;
-  margin:0;
-  padding:0;
-  z-index:0;
+
+.banner {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
 
 }
-.title{
+
+.title {
     text-align: center;
     font-size: 2.5rem;
     margin: 1rem 0;
-    text-decoration:underline;
-    color:rgb(255, 255, 255);
+    text-decoration: underline;
+    color: rgb(255, 255, 255);
     font-family: MoochiJelly;
 }
-.title2{
+
+.title2 {
     text-align: center;
     font-size: 3rem;
     margin: 1rem 0;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-family: love;
 }
-.texto-normal{
+
+.texto-normal {
     text-align: center;
     font-size: 1.7rem;
     margin: 1rem 0;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-family: STB;
 }
-.container{
+
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:0.625rem;
+    gap: 0.625rem;
 }
 
-.button_inicio{
+.button_inicio {
 
     background: rgb(209, 49, 75);
     padding: 1rem 2rem;
     font-size: 1.2rem;
-    color:white;
+    color: white;
     border-radius: 0.625rem;
     cursor: pointer;
     display: block;
@@ -72,11 +78,11 @@ body{
     margin-bottom: 10px;
     text-decoration: none;
     width: 50%;
-    border:none;
+    border: none;
     text-decoration: none;
 }
 
-.icon-favoritos{
+.icon-favoritos {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -91,13 +97,16 @@ body{
     cursor: pointer;
 }
 
-.heart-icon{
+.heart-icon {
     width: 40px;
     height: 40px;
     color: rgb(209, 49, 75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.icon-home{
+.icon-home {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -111,7 +120,8 @@ body{
     z-index: 1;
     cursor: pointer;
 }
-.home-icon{
+
+.home-icon {
     width: 40px;
     height: 40px;
     color: rgb(209, 49, 75);
@@ -125,53 +135,75 @@ body{
 }
 
 .wrap {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 16px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
 }
 
-.search{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+.search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .search input {
-  flex: 1;
-  padding: 12px 14px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
 
 .search button {
-  padding: 12px 16px;
-  border: none;
-  border-radius: 10px;
-  background: rgb(209, 49, 75);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(209, 49, 75);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.find {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.7);
+    animation: shine 2s infinite alternate;
+}
+
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5), 0 0 0 0 rgb(209, 49, 75);
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        box-shadow: 0 0 45px 5px rgba(255, 255, 255, 1), 5px 5px 40px 5px rgb(209, 49, 75, 1);
+        transform: scale(1.005) translateY(3px);
+    }
+
 }
 
 .loader {
-  border: 6px solid #ffffff;
-  border-top: 6px solid rgb(209, 49, 75);
-  border-radius: 50%; 
-  width: 40px;
-  height: 40px;
-  animation: girar 1s linear infinite;
-  margin: 20px auto;
+    border: 6px solid #ffffff;
+    border-top: 6px solid rgb(209, 49, 75);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: girar 1s linear infinite;
+    margin: 20px auto;
 }
 
 @keyframes girar {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
