@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Búsqueda por coctél</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <img src="../images/cocktails.jpg" class="banner">
+    </header>
+
+    <main class="wrap">
+
+        <h1 class="title"> 🍸 Busca Tu Coctél 🍸 </h1>
+
+         <!--Formulario de busqueda-->
+
+         <forms id="form-buscar" class="search">
+            <input
+            id="innput-coctel"
+            type="text"
+            placeholder="Ingresa el coctél a consultar"
+            autocomplete="off"
+            required
+            />
+
+            <button type="submit">Buscar</button>
+
+         </forms>
+
+         <!--Loader-->
+
+         <p id="estado" class="loader"></p>
+
+         <!--Resultados de búsqueda-->
+
+         <div id="resultados" class="grid"> </div>
+
+
+
+    </main>
+
+    <div class="container-icon icon-home">
+        <a href="index.html">
+            <ion-icon name="home-outline" class="home-icon"></ion-icon>
+        </a>
+        </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

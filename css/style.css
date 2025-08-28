@@ -1,6 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 @font-face {
-    font-family: MoochiJelly;
+    font-family: "MoochiJelly";
     src: url(../fonts/MoochiJelly.otf);
+}
+
+@font-face{
+    font-family:"STB";
+    src:url(../fonts/KGSTB.ttf);
+}
+
+@font-face{
+    font-family:"love";
+    src:url(../fonts/Love.ttf);
 }
 
 
@@ -12,6 +27,7 @@ body{
   display:block;
   margin:0;
   padding:0;
+  z-index:0;
 
 }
 .title{
@@ -21,6 +37,20 @@ body{
     text-decoration:underline;
     color:rgb(255, 255, 255);
     font-family: MoochiJelly;
+}
+.title2{
+    text-align: center;
+    font-size: 3rem;
+    margin: 1rem 0;
+    color:rgb(255, 255, 255);
+    font-family: love;
+}
+.texto-normal{
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    color:rgb(255, 255, 255);
+    font-family: STB;
 }
 .container{
     display: flex;
@@ -43,6 +73,7 @@ body{
     text-decoration: none;
     width: 50%;
     border:none;
+    text-decoration: none;
 }
 
 .icon-favoritos{
@@ -66,9 +97,81 @@ body{
     color: rgb(209, 49, 75);
 }
 
+.icon-home{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+}
+.home-icon{
+    width: 40px;
+    height: 40px;
+    color: rgb(209, 49, 75);
+}
+
 .container-icon {
     display: flex;
     gap: 2rem;
     transition: all .5s;
     cursor: pointer;
 }
+
+.wrap {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.search button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(209, 49, 75);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loader {
+  border: 6px solid #ffffff;
+  border-top: 6px solid rgb(209, 49, 75);
+  border-radius: 50%; 
+  width: 40px;
+  height: 40px;
+  animation: girar 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
