@@ -35,6 +35,9 @@ function obtenerUnCoctelRandom() {
         });
 }
 
+
+
+
 obtenerUnCoctelRandom();
 
 
@@ -79,3 +82,51 @@ function mostrarCoctelRandom(cocktail){
 
     drinkSection.appendChild(card)
 }
+
+
+
+
+const form = document.getElementById("form-buscar");
+const input = document.getElementById("input-coctel");
+const resultados = document.getElementById("resultados");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // evita que se recargue la página
+
+    const nombre = input.value.trim();
+    if (!nombre) {
+        resultados.innerHTML = "<p>Escribe un cóctel primero.</p>";
+        return;
+    }
+
+    // Llamada a la API
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${nombre}`;
+    try {
+        const resp = await fetch(url);
+        const data = await resp.json();
+
+        if (data.drinks) {
+            mostrarResultados(data.drinks);
+        } else {
+            resultados.innerHTML = `<p>No se encontró el cóctel: ${nombre}</p>`;
+        }
+    } catch (error) {
+        resultados.innerHTML = "<p>Error al consultar la API.</p>";
+        console.error(error);
+    }
+});
+
+function mostrarResultados(drinks) {
+    resultados.innerHTML = ""; // limpia resultados anteriores
+    drinks.forEach(drink => {
+        const card = document.createElement("div");
+        card.innerHTML = `
+      <h2>${drink.strDrink}</h2>
+      <img src="${drink.strDrinkThumb}" width="200">
+      <p><strong>Categoria:</strong> ${drink.strCategory}</p>
+      <p><strong>Instrucciones:</strong> ${drink.strInstructions}</p>
+    `;
+        resultados.appendChild(card);
+    });
+}
+
