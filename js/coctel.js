@@ -12,22 +12,7 @@ btnAleatorio.addEventListener("click", () =>{
     location.reload();
 })
 
-// verificar que la persona haya mandado un input texto y que la pápgina no se recargue cada vez que se cargue
-/*
-
-//comentario mientras realizo el fetch de cocteles ya que como no esta completamente establecido el form da error -----> Cannot read properties of null (reading 'addEventListener')
-
-form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // evita recarga
-    const q = input.value.trim();
-    if (!q) {
-        renderEstado("Escribe el nombre de un cóctel.");
-        return;
-    }
-    await buscarCoctel(q);
-});
-
- */
+// verificar que la persona haya mandado un input texto y que la pápgina no se recargue cada vez que se cargue 
 
 function obtenerUnCoctelRandom() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
