@@ -46,7 +46,7 @@ function obtenerUnCoctelRandom() {
             }
         )
         .catch(function (err) {
-            console.log("Fetch error :-S", err)
+            console.log("Fetch error type: ", err)
         });
 }
 
