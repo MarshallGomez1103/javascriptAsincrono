@@ -30,6 +30,7 @@ body {
     margin: 0;
     padding: 0;
     z-index: 0;
+    border-radius: 0px;
 
 }
 
@@ -66,7 +67,6 @@ body {
 }
 
 .button_inicio {
-
     background: rgb(209, 49, 75);
     padding: 1rem 2rem;
     font-size: 1.2rem;
@@ -80,6 +80,17 @@ body {
     width: 50%;
     border: none;
     text-decoration: none;
+    transition: all .5s;
+}
+
+.container{
+    display: flex;
+}
+
+.onee:hover, .twoo:hover {
+    padding: calc(1rem + 10px) calc(2rem + 10px);
+    font-size: 1.3rem;
+    width: calc(50% + 10px);
 }
 
 .icon-favoritos {
@@ -106,6 +117,10 @@ body {
     justify-content: center;
 }
 
+.icon-favoritos:hover{
+    transform: scale(1.1);
+}
+
 .icon-home {
     position: fixed;
     top: 20px;
@@ -119,6 +134,10 @@ body {
     align-items: center;
     z-index: 1;
     cursor: pointer;
+}
+
+.icon-home:hover{
+    transform: scale(1.1);
 }
 
 .home-icon {
@@ -155,6 +174,38 @@ body {
     border-radius: 10px;
 }
 
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media  {
+
+}
+
+/* Para que la pagina de coctel sea responsive*/
+
+#form-buscar #input-coctel {
+    transition: all .5s;
+}
+
+#form-buscar #input-coctel:hover {
+    padding: 16px 22px;
+    font-size: larger;
+}
+
+/* Para que la pagina de ingrediente aumente size, asi que seleccionamos esos elementos*/
+#form-buscar #input-ingrediente {
+    transition: all .5s;
+}
+
+#form-buscar #input-ingrediente:hover {
+    padding: 16px 22px;
+    font-size: larger;
+}
+
+
+
 .search button {
     padding: 12px 16px;
     border: none;
@@ -168,6 +219,12 @@ body {
 button.find {
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.7);
     animation: shine 2s infinite alternate;
+    transition: all.5s;
+}
+
+button.find:hover {
+    padding: 13px 17px;
+    font-size: larger;
 }
 
 @keyframes shine {
@@ -196,11 +253,18 @@ button.find {
     display: block;
     margin-top: 30px;
     margin-bottom: 30px;
+    transition: all .5s;
 }
 
 button.aleatorio {
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.7);
     animation: shin 2s infinite alternate;
+}
+
+/*Toco solventar el hover del button aleatorio haciendolo crecer ya que se sobre escribe en keyframes*/
+button.aleatorio:hover {
+    padding: 13px 17px;
+    font-size: larger;
 }
 
 @keyframes shin {
