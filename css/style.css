@@ -195,6 +195,7 @@ button.find {
     margin: auto;
     display: block;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 button.aleatorio {
@@ -261,3 +262,45 @@ img {
     border-radius: 30px;
 }
 
+
+
+
+/* Tarjeta re sensual y plena compartida por ingredientes y cocteles */
+.card{
+    background: linear-gradient(to bottom right, rgb(209,49,75), orange);
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    text-align: center;
+    line-height: 1.5;
+    transition: transform .2s ease;
+}
+.card:hover{
+    transform: scale(1.02);
+    margin-top: 20px;
+}
+
+.card h2{
+    font-family: MoochiJelly, sans-serif;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    text-decoration: underline;
+}
+
+.card img{
+    width: 500px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+    margin: 10px auto 14px auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.card p{ margin: .4rem 0; }
+
+/* Para listas de ingredientes que metemos con <br> */
+.card .ingredientes{
+    margin-top: .4rem;
+}

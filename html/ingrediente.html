@@ -7,6 +7,9 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+
+    <script src="../js/ingrediente.js" defer></script>
+
 </head>
 <body>
 
@@ -14,47 +17,46 @@
     <img src="../images/cocktails.jpg" class="banner">
 </header>
 
-<main>
 
-    <main class="wrap">
+<main class="wrap">
 
-        <h1 class="title"> 🍸 Ingresa el ingrediente para buscar 🍸 </h1>
+    <h1 class="title"> 🍸 Ingresa el ingrediente para buscar 🍸 </h1>
 
-        <!--Formulario de busqueda-->
+    <!--Formulario de busqueda-->
 
-        <forms id="form-buscar" class="search">
-            <input
-                    id="innput-coctel"
-                    type="text"
-                    placeholder="Ingresa el ingrediente para encontrar coctéles"
-                    autocomplete="off"
-                    required
-            />
+    <form id="form-buscar" class="search">
+        <input
+                id="input-ingrediente"
+                type="text"
+                placeholder="Ingresa eun ingrediente (ej: rum, tequila, lime)"
+                autocomplete="off"
+                required
+        />
 
-            <button type="submit" class="find">Buscar</button>
+        <button type="submit" class="find">Buscar</button>
 
-        </forms>
+    </form>
 
-        <!--Loader-->
+    <!--Loader-->
 
-        <p id="estado" class="loader"></p>
+    <p id="estado"></p>
 
-        <!--Resultados de búsqueda-->
+    <!--Resultados de búsqueda-->
 
-        <div id="resultados" class="grid"></div>
+    <div id="resultados" class="grid"></div>
 
 
-    </main>
-
-    <div class="container-icon icon-home">
-
-        <a href="index.html">
-            <ion-icon name="home-outline" class="home-icon"></ion-icon>
-        </a>
-
-    </div>
-    <script src="../js/script.js"></script>
 </main>
+
+<div class="container-icon icon-home">
+
+    <a href="index.html">
+        <ion-icon name="home-outline" class="home-icon"></ion-icon>
+    </a>
+
+</div>
+
+
 </body>
 </html>
 
