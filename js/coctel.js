@@ -165,3 +165,70 @@ function mostrarResultados(drinks) {
     });
 }
 
+let lastShownCocktail = null; // Variable para guardar el último cóctel mostrado
+
+function mostrarCoctelRandom(cocktail) {
+    const drink = cocktail.drinks[0];
+    lastShownCocktail = drink; // Guardar el cóctel aleatorio mostrado
+
+    let drinkSection = document.querySelector('.drinkSection');
+    drinkSection.innerHTML = ""; // Limpiar antes de mostrar
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    let drinkName = document.createElement("h2")
+    drinkName.innerHTML = `<br>${drink.strDrink}, ID(${drink.idDrink})<br> Category: ${drink.strCategory}`;
+    card.appendChild(drinkName);
+
+    let img = document.createElement("img")
+    img.src = drink.strDrinkThumb;
+    card.appendChild(img);
+
+    for (let i = 1; i < 16; i++) {
+        if (!drink[`strIngredient${i}`]) break;
+        let ingredient = document.createElement("ingredients")
+        ingredient.innerHTML = `<br>${drink[`strIngredient${i}`]}: ${drink[`strMeasure${i}`]}`;
+        card.appendChild(ingredient);
+    }
+
+    let instrucciones = document.createElement("ons-card");
+    instrucciones.innerHTML = `<br><br>${drink.strInstructions}`;
+    card.appendChild(instrucciones);
+
+    drinkSection.appendChild(card)
+}
+
+function mostrarResultados(drinks) {
+    resultados.innerHTML = ""; // limpia resultados anteriores
+    if (drinks.length > 0) {
+        lastShownCocktail = drinks[0]; // Guardar el primer cóctel mostrado
+    }
+    drinks.forEach(drink => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML =
+            `<h2>${drink.strDrink}</h2>
+            <img src="${drink.strDrinkThumb}" width="200">
+            <p><strong>Categoria:</strong> ${drink.strCategory}</p>
+            <p><strong>Instrucciones:</strong> ${drink.strInstructions}</p>`;
+        resultados.appendChild(card);
+    });
+}
+
+// Manejo de favoritos usando localStorage
+document.getElementById('add-favorite').addEventListener('click', function() {
+    if (!lastShownCocktail) {
+        alert('No hay cóctel para añadir.');
+        return;
+    }
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    // Evitar duplicados por idDrink
+    if (!favorites.some(fav => fav.idDrink === lastShownCocktail.idDrink)) {
+        favorites.push(lastShownCocktail);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert('¡Coctel añadido a favoritos!');
+    } else {
+        alert('Este cóctel ya está en favoritos.');
+    }
+});

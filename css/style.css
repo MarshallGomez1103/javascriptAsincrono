@@ -178,11 +178,6 @@ form {
     display: flex;
     flex-wrap: wrap;
 }
-
-@media  {
-
-}
-
 /* Para que la pagina de coctel sea responsive*/
 
 #form-buscar #input-coctel {
@@ -367,4 +362,17 @@ img {
 /* Para listas de ingredientes que metemos con <br> */
 .card .ingredientes{
     margin-top: .4rem;
+}
+
+.icon-delete {
+    font-size: 1.5em;
+    vertical-align: middle;
+    color: rgb(0, 0, 0);
+}
+.delete-fav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    padding: 0.2em;
 }
