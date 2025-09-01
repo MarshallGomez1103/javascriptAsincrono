@@ -211,7 +211,12 @@ function mostrarResultados(drinks) {
             `<h2>${drink.strDrink}</h2>
             <img src="${drink.strDrinkThumb}" width="200">
             <p><strong>Categoria:</strong> ${drink.strCategory}</p>
-            <p><strong>Instrucciones:</strong> ${drink.strInstructions}</p>`;
+            <p><strong>Instrucciones:</strong> ${drink.strInstructions}</p>
+            
+            <button class="add-fav" data-id="${drink.idDrink}" data-name="${drink.strDrink}">
+                Añadir a Favoritos
+            </button>`;
+
         resultados.appendChild(card);
     });
 }
@@ -222,10 +227,32 @@ document.getElementById('add-favorite').addEventListener('click', function() {
         alert('No hay cóctel para añadir.');
         return;
     }
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+
     // Evitar duplicados por idDrink
-    if (!favorites.some(fav => fav.idDrink === lastShownCocktail.idDrink)) {
-        favorites.push(lastShownCocktail);
+    const daticos = { idDrink: lastShownCocktail.idDrink, strDrink: lastShownCocktail.strDrink};
+
+    if (!favorites.some(fav => fav.idDrink === daticos.idDrink)) {
+        favorites.push(daticos);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert('¡Coctel añadido a favoritos!');
+    } else {
+        alert('Este cóctel ya está en favoritos.');
+    }
+});
+
+// Delegación: botón "Añadir a Favoritos" dentro de resultados de búsqueda
+resultados.addEventListener('click', (e) => {
+    const btn = e.target.closest('.add-fav');
+    if (!btn) return;
+
+    const id = btn.getAttribute('data-id');
+    const name = btn.getAttribute('data-name');
+
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (!favorites.some(f => f.idDrink === id)) {
+        favorites.push({ idDrink: id, strDrink: name });
         localStorage.setItem('favorites', JSON.stringify(favorites));
         alert('¡Coctel añadido a favoritos!');
     } else {
